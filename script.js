@@ -1,10 +1,22 @@
 const display = document.querySelector(".number");
+let numberCounter=0;
 const adding = document.querySelector(".add");
 const sub = document.querySelector(".sub");
-const parent = document.querySelector(".num-display");
-const child = parent.children;
-adding.addEventListener("click",addingNum);
 
-function addingNum(e){
-    display.innerText = child.length;
+function add(){
+    numberCounter++;
+    display.innerHTML=numberCounter;
 }
+
+function subtract(){
+    numberCounter--;
+    display.innerHTML=numberCounter;
+}
+
+adding.addEventListener("click",()=>{
+    add();
+})
+
+sub.addEventListener("click",()=>{
+    subtract();
+})
